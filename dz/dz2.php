@@ -68,24 +68,61 @@ for($m = 1; $m <= 10; $m++){
     echo "<br>";
 }
 
-//  5. Создать массив из дней недели. С помощью цикла foreach выведите все дни недели, <br> 
-//  а текущий день выведите жирным. Текущий день можно получить с помощью функции date. Название дней выводить по-русски 
- echo '<br>';
- $days = [
-    '1' => 'Понедельник',
-    '2' => 'Вторник',
-    '3' => 'Среда',
-    '4' => 'Четверг',
-    '5' => 'Пятница',
-    '6' => 'Суббота',
-    '7' => 'Воскресенье'
+
+//Нарисуйте треугольник из символов *. Высота треугольника равна 15.
+$arr_figure = [];
+ 	for($m = 0; $m < 15; $m++) {
+ 		array_push($arr_figure, "*");
+ 	}
+ 	for($n = 0; $n < 15; $n++) {
+ 		for($l = 0; $l < 15; $l++) {
+ 			echo $arr_figure[$l];
+ 		}
+ 		$arr_figure[$n] = "&nbsp";
+ 		echo "<br>";
+     }
+     
+// Вывести все числа, от 0 до 30 (включительно) , у которых есть хотя бы одна цифра 3 и которые не делятся на 5.
+     $allnum = [];
+        for ($m = 0; $m <= 30; $m++) {
+            array_push ($allnum, $m);
+        }
+ 
+        foreach ($allnum as $value):
+            $num = strpos($value, "3");
+            if ($num !== false and $value % 5 !== 0) {
+                echo "$value<br>";
+            }
+        endforeach;
+
+// Отсортировать массив по 'price'
+        echo "<br>";
+ $arr = [ 
+     '1'=> [ 
+         'price' => 10, 
+         'count' => 2 
+     ], 
+     '2'=> [ 
+         'price' => 5, 
+         'count' => 5 
+     ], 
+     '3'=> [ 
+         'price' => 8, 
+         'count' => 5 
+     ], 
+     '4'=> [ 
+         'price' => 12, 
+         'count' => 4 
+     ], 
+     '5'=> [ 
+         'price' => 8, 
+         'count' => 4 
+     ], 
  ];
- foreach($days as $key => $day){
-     if ($key === +date('2')){
-     echo "<b>$day</b>";
-      } else {
-     echo $day;
-      }
-     echo "<br>";
- }
+ 
+        foreach($arr as $key => $row){
+            $volume[$key] = $row['price']; 
+        }
+        array_multisort($volume, $arr);
+        var_dump($arr);
 ?>
