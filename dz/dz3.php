@@ -94,4 +94,16 @@
     change($input_str, "pc");
     change($input_str, "HI");
     echo "<br>";
+
+
+// мы передаём число функции, которая в цикле for пытается поделить его на числа из диапазона 1..num и выводит результат
+        function del($num) {
+                for ($i = 1; $i <= $num; $i++) {
+                        $a = $i / $num;
+                        echo "$a<br>";
+                }
+        }
+        del(5);
+        del(2);
+        
  ?>
