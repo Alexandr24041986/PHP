@@ -1,0 +1,19 @@
+{
+    "name": "alex/test",
+    "description": "test",
+    "type": "project",
+    "license": "MIT",
+    "authors": [{
+        "name": "Alex Shavel",
+        "email": "brezhnev555@mail.ru"
+    }],
+    "minimum-stability": "alpha",
+    "require": {
+        "twig/twig": "2.4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Alex\\Test\\": "private/"
+        }
+    }
+}
